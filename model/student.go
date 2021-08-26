@@ -7,4 +7,5 @@ type StudentDetails struct {
 	LastName   string `json:"last_name" gorm:"column:last_name"`
 	FatherName string `json:"father_name" gorm:"column:father_name"`
 	MotherName string `json:"mother_name" gorm:"column:mother_name"`
+	TID        int64  `json:"tid" gorm:"column:tid"`
 }
