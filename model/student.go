@@ -1,5 +1,10 @@
 package model
 
+import (
+	"bytes"
+	"encoding/json"
+)
+
 // StudentDetails represents student_details table
 type StudentDetails struct {
 	ID         int64  `json:"id" gorm:"column:id"`
@@ -10,10 +15,9 @@ type StudentDetails struct {
 	TID        int64  `json:"tid" gorm:"column:tid"`
 }
 
-
 func (this StudentDetails) Marshal() (outstr []byte, err error) {
 	body := bytes.NewBuffer(nil)
-	err = jsonapi.MarshalPayload(body, &this)
+	err = json.MarshalPayload(body, &this)
 	if err == nil {
 		outstr = body.Bytes()
 	}
@@ -22,7 +26,7 @@ func (this StudentDetails) Marshal() (outstr []byte, err error) {
 
 func (this *StudentDetails) UnMarshal(data []byte) (err error) {
 	buffer := bytes.NewBufferString(string(data))
-	err = jsonapi.UnmarshalPayload(buffer, this)
+	err = json.UnmarshalPayload(buffer, this)
 	if err != nil {
 		return
 	}
