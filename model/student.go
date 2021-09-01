@@ -9,3 +9,22 @@ type StudentDetails struct {
 	MotherName string `json:"mother_name" gorm:"column:mother_name"`
 	TID        int64  `json:"tid" gorm:"column:tid"`
 }
+
+
+func (this StudentDetails) Marshal() (outstr []byte, err error) {
+	body := bytes.NewBuffer(nil)
+	err = jsonapi.MarshalPayload(body, &this)
+	if err == nil {
+		outstr = body.Bytes()
+	}
+	return
+}
+
+func (this *StudentDetails) UnMarshal(data []byte) (err error) {
+	buffer := bytes.NewBufferString(string(data))
+	err = jsonapi.UnmarshalPayload(buffer, this)
+	if err != nil {
+		return
+	}
+	return
+}
