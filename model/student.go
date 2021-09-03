@@ -1,10 +1,5 @@
 package model
 
-import (
-	"bytes"
-	"encoding/json"
-)
-
 // StudentDetails represents student_details table
 type StudentDetails struct {
 	ID         int64  `json:"id" gorm:"column:id"`
@@ -23,6 +18,7 @@ type StudentDetails struct {
 // 	}
 // 	return
 // }
+//
 
 // func (this *StudentDetails) UnMarshal(data []byte) (err error) {
 // 	buffer := bytes.NewBufferString(string(data))
