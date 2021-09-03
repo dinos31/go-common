@@ -15,20 +15,20 @@ type StudentDetails struct {
 	TID        int64  `json:"tid" gorm:"column:tid"`
 }
 
-func (this StudentDetails) Marshal() (outstr []byte, err error) {
-	body := bytes.NewBuffer(nil)
-	err = json.MarshalPayload(body, &this)
-	if err == nil {
-		outstr = body.Bytes()
-	}
-	return
-}
+// func (this StudentDetails) Marshal() (outstr []byte, err error) {
+// 	body := bytes.NewBuffer(nil)
+// 	err = json.MarshalPayload(body, &this)
+// 	if err == nil {
+// 		outstr = body.Bytes()
+// 	}
+// 	return
+// }
 
-func (this *StudentDetails) UnMarshal(data []byte) (err error) {
-	buffer := bytes.NewBufferString(string(data))
-	err = json.UnmarshalPayload(buffer, this)
-	if err != nil {
-		return
-	}
-	return
-}
+// func (this *StudentDetails) UnMarshal(data []byte) (err error) {
+// 	buffer := bytes.NewBufferString(string(data))
+// 	err = json.UnmarshalPayload(buffer, this)
+// 	if err != nil {
+// 		return
+// 	}
+// 	return
+// }
