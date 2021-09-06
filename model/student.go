@@ -30,9 +30,9 @@ type StudentDetails struct {
 // }
 
 //SDR represents reponse for StudentDetails.
-type StudentDetailsResponse struct {
-	Success bool             `json:"success"`
-	Message string           `json:"message"`
-	Errror  interface{}      `json:"error"`
-	Data    []StudentDetails `json:"Data"`
-}
+// type StudentDetailsResponse struct {
+// 	Success bool             `json:"success"`
+// 	Message string           `json:"message"`
+// 	Errror  interface{}      `json:"error"`
+// 	Data    []StudentDetails `json:"Data"`
+// }
