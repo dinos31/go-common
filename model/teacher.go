@@ -8,3 +8,19 @@ type TeacherDetails struct {
 	Class      string `json:"class" gorm:"column:class"`
 	Subject    string `json:"subject" gorm:"column:subject"`
 }
+
+
+//SDR represents reponse for TeacherDetails.
+type TeacherDetailsResponse struct {
+	Success bool             `json:"success"`
+	Message string           `json:"message"`
+	Errror  interface{}      `json:"error"`
+	Data    []TeacherDetails `json:"Data"`
+}
+
+type TeacherDetailResponse struct {
+	Success bool           `json:"success"`
+	Message string         `json:"message"`
+	Errror  interface{}    `json:"error"`
+	Data    TeacherDetails `json:"Data"`
+}
