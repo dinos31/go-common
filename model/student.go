@@ -36,3 +36,10 @@ type StudentDetailsResponse struct {
 	Errror  interface{}      `json:"error"`
 	Data    []StudentDetails `json:"Data"`
 }
+
+type StudentDetailResponse struct {
+	Success bool           `json:"success"`
+	Message string         `json:"message"`
+	Errror  interface{}    `json:"error"`
+	Data    StudentDetails `json:"Data"`
+}
